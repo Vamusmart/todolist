@@ -2,7 +2,6 @@
   "name": "todolist",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Vamusmart/to-do-list",
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -11,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts tests",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
