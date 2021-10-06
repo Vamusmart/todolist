@@ -4,6 +4,24 @@ body {
   font-family: sans-serif;
 }
 
+input::placeholder {
+  color: rgb(17, 0, 255);
+}
+
+input {
+  border: none;
+  opacity: 0.5;
+}
+
+li {
+  display: list-item;
+  color: rgb(227, 237, 240);
+  font-size: 20px;
+  text-align: center;
+  list-style: none;
+  width: 100%;
+}
+
 .li {
   background-color: rgb(95, 187, 240);
   padding: 15px;
@@ -13,7 +31,6 @@ body {
   font-size: 19px;
 }
 
-
 .delete {
   padding: 1px;
   font-size: 12px;
@@ -21,7 +38,7 @@ body {
   background-color: rgb(17, 0, 255);
   color: rgb(0, 255, 242);
   border: 1px solid rgb(17, 0, 255);
-  width: 5%;
+  width: 1rem;
   border-radius: 100%;
   margin: 1%;
 }
@@ -39,21 +56,12 @@ body {
 }
 .task {
   font-size: 19px;
-  width: 99%;
-  border: 2px solid rgb(0, 255, 242);
+  width: 100%;
   color: blue;
   text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-li {
-  display: list-item;
-  color: rgb(227, 237, 240);
-  font-size: 20px;
-  text-align: center;
-  list-style: none;
-  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin: 0;
 }
 
 .app-title {
@@ -65,8 +73,5 @@ li {
 .container {
   border: 5px solid rgb(156, 243, 229);
   border-radius: 25px;
-}
-
-input::placeholder {
-  color: rgb(156, 243, 229);
+  word-wrap: break-word;
 }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './index.css';
+import React, { Component } from "react";
+import "./index.css";
 
 class App extends Component {
   constructor(props) {
@@ -7,17 +7,14 @@ class App extends Component {
 
     this.state = {
       newItem: "",
-      list: []
-    }
+      list: [],
+    };
   }
-
-  //https://www.youtube.com/watch?v=e_ZibOe77yo
-
 
   updateInput(key, value) {
     //update react state
     this.setState({
-      [key]: value
+      [key]: value,
     });
   }
   //ADD FUNCTION
@@ -25,7 +22,7 @@ class App extends Component {
     //create item with unique id
     const newItem = {
       id: 1 + Math.random(),
-      value: this.state.newItem.slice()
+      value: this.state.newItem.slice(),
     };
 
     //copy of current list of items
@@ -37,60 +34,58 @@ class App extends Component {
     //update state with new list and reset newItem input
     this.setState({
       list,
-      newItem: ""
+      newItem: "",
     });
   }
 
   //DELETE FUNCTION
-deleteItem(id){
-  //copy current list of items
-  const list =[...this.state.list];
+  deleteItem(id) {
+    //copy current list of items
+    const list = [...this.state.list];
 
-  //filter out item being deleted
-  const updateList = list.filter(item => item.id !== id);
+    //filter out item being deleted
+    const updateList = list.filter((item) => item.id !== id);
 
-  this.setState({list: updateList});
-}
-
+    this.setState({ list: updateList });
+  }
 
   render() {
     return (
       <div>
         <div>
           <h1 className="app-title">To Do List</h1>
-        <br />
-        <div className="container">
-
-          <input className="task"
-            type="text"
-            placeholder="Type item here..."
-            value={this.state.newItem}
-            onChange={e => this.updateInput("newItem", e.target.value)}
-          />
-          <button className="add"
-            onClick={() => this.addItem()}
-          >
-            Add
-        </button>
           <br />
-          <ul>
-            {this.state.list.map(item => {
-              return (
-                <li key={item.id}>
-                  {item.value}
-                  <button className="delete"
-                    onClick={() => this.deleteItem(item.id)}
-                  >
-                    x
-              </button>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="container">
+            <input
+              className="task"
+              type="text"
+              placeholder="Add a Task.."
+              value={this.state.newItem}
+              onChange={(e) => this.updateInput("newItem", e.target.value)}
+            />
+            <button className="add" onClick={() => this.addItem()}>
+              Add
+            </button>
+
+            <br />
+            <ul>
+              {this.state.list.map((item) => {
+                return (
+                  <li key={item.id}>
+                    {item.value}
+                    <button
+                      className="delete"
+                      onClick={() => this.deleteItem(item.id)}
+                    >
+                      x
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
-        </div>
-
+      </div>
     );
   }
 }
